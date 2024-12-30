@@ -1,0 +1,24 @@
+services:
+  cardb:
+    image: mariadb:11.4.4-noble
+    container_name: book-fullstack-springboot
+    restart: always
+    environment:
+      MARIADB_DATABASE: cardb
+      MARIADB_ROOT_PASSWORD: ${DB_PASSWORD}
+      MARIADB_USER: caruser
+      MARIADB_PASSWORD: ${DB_PASSWORD}
+      LANG: C.UTF-8
+      TZ: Asia/Seoul
+    ports:
+      - "3306:3306"
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+      - --lower_case_table_names=1
+      - --default-time-zone=Asia/Seoul
+    volumes:
+      - book-fullstack-springboot-react-data:/var/lib/mysql
+
+volumes:
+  book-fullstack-springboot-react-data:
