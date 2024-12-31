@@ -1,0 +1,16 @@
+### 401 Unauthentication
+GET http://localhost:8080/api/cars
+
+### 로그인
+POST http://localhost:8080/login
+Content-Type: application/json
+
+{
+    "username": "user",
+    "password": "user"
+}
+
+### 보호된 목록 조회
+GET http://localhost:8080/api/cars
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyIiwiZXhwIjoxNzM1NjE2NTA3fQ.-t9QeDvIsTRcfO56fsbgf7JQNPyFYsF2oF7U8kIytAxGhGfTGlzmkxv-xUUn5RAR9SZt5knDDIcngMiy2JfSRA
